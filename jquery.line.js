@@ -1,13 +1,18 @@
-/* This plugin is based on the GAPJUMPER line example http://www.gapjumper.com/research/lines.html.
-   Special thanks to its author!
-   Author: Tiago do Bem 
-   March 2013
+/*-------------------------------------------------------------------------------------------------
+  This plugin is based on the GAPJUMPER line example http://www.gapjumper.com/research/lines.html.
+  Special thanks to its author!
+  Author: Tiago do Bem 
+  Date: March 2013
+  URL: https://github.com/tbem/jquery.line
+  The jQuery.line.js plugin is distributed under the GNU General Public License version 3 (GPLv3).
+  -------------------------------------------------------------------------------------------------
 */ 
 
 (function($) {
 
   var helpers = {
     createLine: function(x1, y1, x2, y2, options){
+      
                   // Check if browser is Internet Exploder ;)
                   var isIE = navigator.userAgent.indexOf("MSIE") > -1;
                   if (x2 < x1){
@@ -20,11 +25,16 @@
                   }
                   var line = document.createElement("div");
                   line.className = "global_dashboard_line";
+                  
+                  // Formula for the distance between two points
+                  // http://www.mathopenref.com/coorddist.html
                   var length = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+
                   line.style.width = length + "px";
                   line.style.borderColor = options.color;
                   line.style.zIndex = options.zindex;
                   line.style.borderWidth = options.stroke + " 0px 0px 0px";
+
                   if(isIE){
                     line.style.top = (y2 > y1) ? y1 + "px" : y2 + "px";
                     line.style.left = x1 + "px";
