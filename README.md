@@ -5,6 +5,8 @@ Draw a line between two given points in the passed container.
 
 Usage:
 
+$(selector).line(x1,y1,x2,y2,options,callback);
+
 //Assuming that #example have position:relative or absolute.
 
 $('#example').line(0, 0, 20, 20);
