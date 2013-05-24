@@ -1,7 +1,7 @@
 jquery.line
 ===========
 
-Draw a line between two given points in the passed container.
+Draw a line between two points in the given container.
 
 Usage:
 
