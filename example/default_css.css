@@ -1,0 +1,22 @@
+#example{
+    position:relative;
+    width:500px;
+    height: 500px;
+    background-color:yellow;
+    z-index:10;
+}
+.square{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 20000;
+  background-color: blue;
+}
+#s1{
+  left: 150px;
+  top: 200px;
+}
+#s2{
+  left: 350px;
+  top: 200px;
+}

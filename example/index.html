@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script type="text/javascript" src="jquery.1.10.2.js"></script>
+    <script type="text/javascript" src="../jquery.line.js"></script>
+    <link rel="stylesheet" href="default_css.css">
+    <script type="text/javascript">
+    
+    $(function() {
+
+      $('#example').line(190, 225, 352, 225, {color:"red", zindex:1});
+
+      $('#s1').line(0,0,50,50, {color:"pink"});
+      $('#s2').line(0,50,50,0, {color:"red"});
+
+      $('#example').line(20,45,200,400, {color:"blue"});
+      $('#example').line(10, 10, 300, 100, {color:"#D60004", stroke:5, zindex:1001}, 
+                          function(){alert('Hello new line!')});
+    });
+
+    </script>
+  </head>
+  <body>
+    <div id="example">
+      <div class='square' id="s1">
+      </div>
+       <div class='square' id="s2">
+      </div>
+    </div>
+  </body>
+</html>
