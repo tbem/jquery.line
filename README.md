@@ -16,10 +16,10 @@ You can pass some options like color, stroke width or zindex, and a callback fun
 Defaults are:
   { zindex : -1,
     color : '#000000',
-    stroke: '1px'
+    stroke: '1'
   }
 
 Example: 
 
-$('#example').line(0, 0, 20, 20, {color:"#CCC", stroke:'5px', zindex:1000}, function(){alert('Hello new line!')});
+$('#example').line(10, 10, 300, 300, {color:"#D60004", stroke:5, zindex:1001}, function(){alert('Hello new line!')});
 

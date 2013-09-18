@@ -24,16 +24,16 @@
                     y2 = temp;
                   }
                   var line = document.createElement("div");
-                  line.className = "global_dashboard_line";
+                  
                   
                   // Formula for the distance between two points
                   // http://www.mathopenref.com/coorddist.html
                   var length = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
 
                   line.style.width = length + "px";
+                  line.style.borderBottom = options.stroke + "px solid";
                   line.style.borderColor = options.color;
-                  line.style.zIndex = options.zindex;
-                  line.style.borderWidth = options.stroke + " 0px 0px 0px";
+                  line.style.position = "absolute";
 
                   if(isIE){
                     line.style.top = (y2 > y1) ? y1 + "px" : y2 + "px";
@@ -52,20 +52,28 @@
   }
   
 
-  $.fn.line = function( x1, y1, x2, y2, options, callback) {
-    return $(this).each(function(){
-      if($.isFunction(options)){
-          callback = options;
-          options = null;
-      }
-      options = $.extend({}, $.fn.line.defaults, options);
+  $.fn.line = function( x1, y1, x2, y2, options, callbacks) {
+                return $(this).each(function(){
+                  if($.isFunction(options)){
+                      callback = options;
+                      options = null;
+                  }else{
+                    callback = callbacks;
+                  }
+                  options = $.extend({}, $.fn.line.defaults, options);
 
-      $(this).append(helpers.createLine(x1,y1,x2,y2,options));
-      
-    });
+                  $(this).append(helpers.createLine(x1,y1,x2,y2,options)).promise().done(function(){
+                    if($.isFunction(callback)){
+                      callback.call();
+                    }
+                  });
+
+                
+              });
   };
-  $.fn.line.defaults = {  zindex : -1,
+  $.fn.line.defaults = {  zindex : 10000,
                           color : '#000000',
-                          stroke: '1px'
+                          stroke: "1",
                         };
 })(jQuery);
+
