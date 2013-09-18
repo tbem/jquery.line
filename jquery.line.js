@@ -34,6 +34,7 @@
                   line.style.borderBottom = options.stroke + "px solid";
                   line.style.borderColor = options.color;
                   line.style.position = "absolute";
+                  line.style.zIndex = options.zindex;
 
                   if(isIE){
                     line.style.top = (y2 > y1) ? y1 + "px" : y2 + "px";
