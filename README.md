@@ -23,3 +23,6 @@ Example:
 
 $('#example').line(10, 10, 300, 300, {color:"#D60004", stroke:5, zindex:1001}, function(){alert('Hello new line!')});
 
+Working example:
+http://jsfiddle.net/Fkj5X/5/
+
