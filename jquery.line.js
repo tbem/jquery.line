@@ -31,7 +31,7 @@
                   var length = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
 
                   line.style.width = length + "px";
-                  line.style.borderBottom = options.stroke + "px solid";
+                  line.style.borderBottom = options.stroke + "px " + options.style;
                   line.style.borderColor = options.color;
                   line.style.position = "absolute";
                   line.style.zIndex = options.zindex;
@@ -75,6 +75,7 @@
   $.fn.line.defaults = {  zindex : 10000,
                           color : '#000000',
                           stroke: "1",
+                          style: "solid",
                         };
 })(jQuery);
 
