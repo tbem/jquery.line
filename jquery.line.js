@@ -46,7 +46,7 @@
                     var angle = Math.atan((y2-y1)/(x2-x1));
                     line.style.top = y1 + 0.5*length*Math.sin(angle) + "px";
                     line.style.left = x1 - 0.5*length*(1 - Math.cos(angle)) + "px";
-                    line.style.MozTransform = line.style.WebkitTransform = line.style.OTransform= "rotate(" + angle + "rad)";
+                    line.style.MozTransform = line.style.WebkitTransform = line.style.msTransform = line.style.OTransform= "rotate(" + angle + "rad)";
                   }
                   return line;
                 }
