@@ -16,7 +16,8 @@ You can pass some options like color, stroke width or zindex, and a callback fun
 Defaults are:
   { zindex : -1,
     color : '#000000',
-    stroke: '1'
+    stroke: '1',
+    style: 'solid'
   }
 
 Example: 
