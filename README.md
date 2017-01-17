@@ -14,10 +14,11 @@ $('#example').line(0, 0, 20, 20);
 You can pass some options like color, stroke width or zindex, and a callback function:
 
 Defaults are:
-  { zindex : -1,
+  { zindex : 10000,
     color : '#000000',
     stroke: '1',
-    style: 'solid'
+    style: 'solid',
+    class: 'line',
   }
 
 Example: 
